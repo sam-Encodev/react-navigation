@@ -1,17 +1,11 @@
 import { useEffect } from "react";
+import { useTheme } from "tamagui";
 import { useFonts } from "expo-font";
-import {
-  TransitionPresets,
-  createStackNavigator,
-  CardStyleInterpolators,
-} from "@react-navigation/stack";
-import HomeScreen from "./screens/Home";
-import DetailsScreen from "./screens/Details";
-import { View, Text, useTheme } from "tamagui";
-import SettingsScreen from "./screens/Settings";
 import ModalScreen from "./screens/Modal";
+import TabNavigator from "./navigation/TabNavigator";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const Stack = createStackNavigator();
+const RootStack = createStackNavigator();
 
 export default function Main() {
   const theme = useTheme();
@@ -22,7 +16,6 @@ export default function Main() {
 
   useEffect(() => {
     if (loaded) {
-      // can hide splash screen here
     }
   }, [loaded]);
 
@@ -30,58 +23,21 @@ export default function Main() {
     return null;
   }
 
-  console.log("theme", theme);
-  return (
-    // <View backgroundColor={theme.color9.val}>
-    //   <Text color={theme.color1.val}>
-    //     Open up App.js to start working on your app!
-    //   </Text>
-    // </View>
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={({ navigation }) => ({
-          headerShown: false,
-          title: "Home",
-          headerLargeTitle: true,
-          headerStyle: {
-            backgroundColor: theme.color9.val,
-          },
-          headerTransparent: false,
-        })}
-      />
-      <Stack.Screen
-        name="Details"
-        component={DetailsScreen}
-        options={({ navigation }) => ({
-          headerShown: true,
-          gestureEnabled: true,
-          cardOverlayEnabled: true,
-          // ...TransitionPresets.ModalPresentationIOS,
-          cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
-          // headerLeft:()
-        })}
-      />
-      <Stack.Screen
-        name="Settings"
-        component={SettingsScreen}
-        options={({ navigation }) => ({
-          headerShown: true,
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-        })}
-      />
+  console.log({ theme });
 
-      <Stack.Screen
+  return (
+    <RootStack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <RootStack.Screen name="Tabs" component={TabNavigator} />
+      <RootStack.Screen
         name="Modal"
         component={ModalScreen}
-        options={({ navigation }) => ({
-          headerShown: false,
-          gestureEnabled: true,
-          cardOverlayEnabled: true,
-          presentation: "transparentModal",
-        })}
+        options={{ presentation: "transparentModal" }}
       />
-    </Stack.Navigator>
+    </RootStack.Navigator>
   );
 }
