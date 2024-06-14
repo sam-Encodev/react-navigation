@@ -1,6 +1,6 @@
 import * as React from "react";
 import { View } from "react-native";
-import List from "../component/List";
+import List from "../components/List";
 
 export default function DetailsScreen({ navigation }) {
   return (
