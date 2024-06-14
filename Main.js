@@ -32,11 +32,6 @@ export default function Main() {
 
   console.log("theme", theme);
   return (
-    // <View backgroundColor={theme.color9.val}>
-    //   <Text color={theme.color1.val}>
-    //     Open up App.js to start working on your app!
-    //   </Text>
-    // </View>
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         name="Home"
@@ -60,7 +55,6 @@ export default function Main() {
           cardOverlayEnabled: true,
           // ...TransitionPresets.ModalPresentationIOS,
           cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
-          // headerLeft:()
         })}
       />
       <Stack.Screen
