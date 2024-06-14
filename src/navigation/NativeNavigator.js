@@ -9,7 +9,7 @@ import SettingsScreen from "./screens/Settings";
 
 const Stack = createNativeStackNavigator();
 
-export default function Main() {
+export default function NativeNavigator() {
   const theme = useTheme();
   const [loaded] = useFonts({
     Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),

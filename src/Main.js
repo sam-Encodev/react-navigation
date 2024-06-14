@@ -7,7 +7,7 @@ import {
 } from "@react-navigation/stack";
 import HomeScreen from "./screens/Home";
 import DetailsScreen from "./screens/Details";
-import { View, Text, useTheme } from "tamagui";
+import { useTheme } from "tamagui";
 import SettingsScreen from "./screens/Settings";
 import ModalScreen from "./screens/Modal";
 

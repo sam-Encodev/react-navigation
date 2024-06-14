@@ -1,10 +1,10 @@
-import Main from "./Main";
+import Main from "./src/Main";
 import "@tamagui/core/reset.css";
 import { StatusBar } from "expo-status-bar";
 import { config } from "@tamagui/config/v3";
 import { TamaguiProvider, createTamagui } from "tamagui";
 import { SheetProvider } from "react-native-actions-sheet";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const appConfig = createTamagui(config);
