@@ -1,17 +1,13 @@
 import { useEffect } from "react";
 import { useFonts } from "expo-font";
-import {
-  TransitionPresets,
-  createStackNavigator,
-  CardStyleInterpolators,
-} from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TransitionPresets } from "@react-navigation/stack";
 import HomeScreen from "./screens/Home";
 import DetailsScreen from "./screens/Details";
 import { View, Text, useTheme } from "tamagui";
 import SettingsScreen from "./screens/Settings";
-import ModalScreen from "./screens/Modal";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function Main() {
   const theme = useTheme();
@@ -42,11 +38,11 @@ export default function Main() {
         name="Home"
         component={HomeScreen}
         options={({ navigation }) => ({
-          headerShown: false,
-          title: "Home",
+          headerTitle: null,
           headerLargeTitle: true,
           headerStyle: {
             backgroundColor: theme.color9.val,
+            fontWeight: "100",
           },
           headerTransparent: false,
         })}
@@ -56,30 +52,20 @@ export default function Main() {
         component={DetailsScreen}
         options={({ navigation }) => ({
           headerShown: true,
-          gestureEnabled: true,
+          gestureEnabled: false,
           cardOverlayEnabled: true,
-          // ...TransitionPresets.ModalPresentationIOS,
-          cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
-          // headerLeft:()
+          statusBarTranslucent: true,
+          ...TransitionPresets.ModalPresentationIOS,
         })}
+        presentation="modal"
       />
       <Stack.Screen
         name="Settings"
         component={SettingsScreen}
         options={({ navigation }) => ({
           headerShown: true,
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-        })}
-      />
-
-      <Stack.Screen
-        name="Modal"
-        component={ModalScreen}
-        options={({ navigation }) => ({
-          headerShown: false,
           gestureEnabled: true,
           cardOverlayEnabled: true,
-          presentation: "transparentModal",
         })}
       />
     </Stack.Navigator>
