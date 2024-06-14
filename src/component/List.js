@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 import EmptyState from "./EmptyState";
-import { items } from "../../utils/constants";
+import { items } from "../utils/constants";
 
 export default function List() {
   return (

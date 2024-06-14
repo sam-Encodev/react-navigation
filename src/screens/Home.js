@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import * as Device from "expo-device";
-import { items } from "../../utils/constants";
+import { items } from "../utils/constants";
 
 export default function HomeScreen({ navigation }) {
   return (
