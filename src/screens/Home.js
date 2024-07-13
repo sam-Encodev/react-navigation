@@ -18,24 +18,24 @@ export default function HomeScreen({ navigation }) {
   >
    <View style={{ gap: 10 }}>
     <TouchableOpacity
-     onPress={() => navigation.navigate("Settings")}
+     onPress={() => navigation.navigate("First", { screen: "Details" })}
+     style={styles.button}
+    >
+     <Text style={styles.buttonText}>Go to Details</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity
+     onPress={() => navigation.navigate("Second", { screen: "Settings" })}
      style={styles.button}
     >
      <Text style={styles.buttonText}>Go to Settings</Text>
     </TouchableOpacity>
 
     <TouchableOpacity
-     onPress={() => navigation.navigate("Profile")}
+     onPress={() => navigation.navigate("Second", { screen: "Profile" })}
      style={styles.button}
     >
      <Text style={styles.buttonText}>Go to Profile</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity
-     onPress={() => navigation.navigate("Details")}
-     style={styles.button}
-    >
-     <Text style={styles.buttonText}>Go to Details</Text>
     </TouchableOpacity>
    </View>
   </ScrollView>

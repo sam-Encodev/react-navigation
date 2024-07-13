@@ -12,24 +12,24 @@ export default function SettingsScreen({ navigation }) {
   <ScrollView style={{ gap: 10, paddingVertical: 70, paddingHorizontal: 10 }}>
    <View style={{ gap: 10 }}>
     <TouchableOpacity
-     onPress={() => navigation.navigate("Home")}
+     onPress={() => navigation.navigate("First", { screen: "Home" })}
      style={styles.button}
     >
      <Text style={styles.buttonText}>Go to Home</Text>
     </TouchableOpacity>
 
     <TouchableOpacity
-     onPress={() => navigation.navigate("Profile")}
-     style={styles.button}
-    >
-     <Text style={styles.buttonText}>Go to Profile</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity
-     onPress={() => navigation.navigate("Details")}
+     onPress={() => navigation.navigate("First", { screen: "Details" })}
      style={styles.button}
     >
      <Text style={styles.buttonText}>Go to Details</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity
+     onPress={() => navigation.navigate("Second", { screen: "Profile" })}
+     style={styles.button}
+    >
+     <Text style={styles.buttonText}>Go to Profile</Text>
     </TouchableOpacity>
    </View>
   </ScrollView>
