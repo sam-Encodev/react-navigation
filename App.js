@@ -10,16 +10,16 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 const appConfig = createTamagui(config);
 
 export default function App() {
-	return (
-		<NavigationContainer>
-			<TamaguiProvider config={appConfig} defaultTheme="dark">
-				<SheetProvider>
-					<GestureHandlerRootView style={{ flex: 1 }}>
-						<StatusBar style="auto" />
-						<Main />
-					</GestureHandlerRootView>
-				</SheetProvider>
-			</TamaguiProvider>
-		</NavigationContainer>
-	);
+ return (
+  <NavigationContainer>
+   <TamaguiProvider config={appConfig} defaultTheme="dark">
+    <SheetProvider>
+     <GestureHandlerRootView style={{ flex: 1 }}>
+      <StatusBar style="auto" />
+      <Main />
+     </GestureHandlerRootView>
+    </SheetProvider>
+   </TamaguiProvider>
+  </NavigationContainer>
+ );
 }
