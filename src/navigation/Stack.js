@@ -9,7 +9,7 @@ const SettingsStack = createStackNavigator();
 
 const Settings = () => {
  return (
-  <SettingsStack.Navigator>
+  <SettingsStack.Navigator initialRouteName="Settings">
    <SettingsStack.Screen name="Profile" component={ProfileScreen} />
    <SettingsStack.Screen name="Settings" component={SettingsScreen} />
   </SettingsStack.Navigator>
@@ -18,7 +18,7 @@ const Settings = () => {
 
 const Home = () => {
  return (
-  <HomeStack.Navigator>
+  <HomeStack.Navigator initialRouteName="Home">
    <HomeStack.Screen name="Home" component={HomeScreen} />
    <HomeStack.Screen name="Details" component={DetailsScreen} />
   </HomeStack.Navigator>
