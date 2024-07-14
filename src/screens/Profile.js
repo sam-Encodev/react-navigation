@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 
-export default function Profile() {
+export default function Profile({navigation}) {
  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
  useFocusEffect(
   React.useCallback(() => {
@@ -21,3 +21,17 @@ export default function Profile() {
   </View>
  );
 }
+
+const styles = StyleSheet.create({
+ button: {
+  borderRadius: 10,
+  backgroundColor: "tomato",
+ },
+ buttonText: {
+  padding: 10,
+  fontSize: 20,
+  color: "white",
+  textAlign: "center",
+  fontWeight: "700",
+ },
+});

@@ -30,13 +30,6 @@ export default function HomeScreen({ navigation }) {
     >
      <Text style={styles.buttonText}>Go to Settings</Text>
     </TouchableOpacity>
-
-    <TouchableOpacity
-     onPress={() => navigation.navigate("Second", { screen: "Profile" })}
-     style={styles.button}
-    >
-     <Text style={styles.buttonText}>Go to Profile</Text>
-    </TouchableOpacity>
    </View>
   </ScrollView>
  );

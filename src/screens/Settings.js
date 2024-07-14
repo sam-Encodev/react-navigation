@@ -19,13 +19,6 @@ export default function SettingsScreen({ navigation }) {
     </TouchableOpacity>
 
     <TouchableOpacity
-     onPress={() => navigation.navigate("First", { screen: "Details" })}
-     style={styles.button}
-    >
-     <Text style={styles.buttonText}>Go to Details</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity
      onPress={() => navigation.navigate("Second", { screen: "Profile" })}
      style={styles.button}
     >
